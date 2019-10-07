@@ -36,7 +36,9 @@ include ('conn.php');
                     <td><?php echo $data['nama'];  ?></td>
                     <td><?php echo $data['alamat'];  ?></td>
                     <td><?php echo $data['jenis_kelamin'];  ?></td>
-                  </tr>
+                    <td><a href="<?php echo "update.php?npm=".$data['npm']; ?>">Update</a>&nbsp;&nbsp;</td>
+                    <td><a href="<?php echo "delete.php?npm=".$data['npm']; ?>"> Delete</a></td>
+                    </tr>
                  <?php endwhile ?>
             </tbody>
     </table>

@@ -48,7 +48,7 @@ body {
     margin-top: 6px;
     color: white;
 }
-.button {
+.register-form button {
     display: block;
     background: #718093;
     padding: 14px 0;
@@ -59,3 +59,14 @@ body {
     width: 100%;
     border:1px;
 }
+/* .view-data {
+    display: block;
+    background: #718093;
+    padding: 14px 0;
+    color: white;
+    text-transform: uppercase;
+    cursor: pointer;
+    margin-top: 8px;
+    width: 100%;
+    border:1px;
+} */

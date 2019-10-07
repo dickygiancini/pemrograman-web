@@ -64,8 +64,12 @@
             <br>
         </div>
         <button type="submit" class="button">Send Form</button>
+        <br>
         </form>
-        <button onclick="location.href='data-diri.php'">List Data</button>
+        <br>
+        <div class="view-data">
+            <button onclick="location.href='data-diri.php'">List Data</button>
+        </div>
     </div>
     </body>
 </html>

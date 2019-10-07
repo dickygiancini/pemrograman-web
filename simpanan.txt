@@ -1,0 +1,7 @@
+                    UPDATE DELETE DISEBELAH
+                    
+                    <td>
+                      <a href="<?php echo "update.php?nrp=".$data['nrp']; ?>" class="btn btn-outline-warning btn-sm"> Update</a>
+                      &nbsp;&nbsp;
+                      <a href="<?php echo "delete.php?nrp=".$data['nrp']; ?>" class="btn btn-outline-danger btn-sm"> Delete</a>
+                    </td>
