@@ -5,7 +5,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Login</title>	
+	<title>Login</title>
+	<meta http-equiv="X-UA-Compatible" content='ie=edge'>
+	<link rel="stylesheet" href="./style/style.css">
 </head>
 <body>
 
@@ -37,7 +39,7 @@
 			</tr>
 			<tr>
 				<td></td>
-				<td><input type="submit" name="login" value="Log In"></td>
+				<td class="button"><input type="submit" name="login" value="Log In"></td>
 			</tr>
 		</table>
 	</form>

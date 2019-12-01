@@ -1,16 +1,32 @@
 <?php 
 session_start();
-require_once ('conn.php');
+
+$username = "";
+include ('conn.php');
 
    if(isset($_POST['login'])){
       if(empty($_POST['username']) || empty($_POST['password'])){
          header("location:index.php?Empty= Enter the blank space");
       }
       else {
-         $query="SELECT * FROM users WHERE username='".$_POST['username']."' and password='".$_POST['password']."'";
+         $username = mysqli_real_escape_string($con, $_POST['username']);
+         $password = mysqli_real_escape_string($con, $_POST['password']);
+
+         $query="SELECT * FROM data_user WHERE username='$username' and password='$password'";
          $result=mysqli_query($con,$query);
-         if(mysqli_fetch_assoc($result)){
-            $_SESSION['User']=$_POST['username'];
+
+         $user_login = mysqli_fetch_assoc($result);
+         if($user_login['username'] == 'admin@admin.com'){
+            $_SESSION['User']="Admin";
+            $_SESSION['kode_fakultas']='0';
+            $_SESSION['username']=$user_login;
+            header("location:dashboard.php");
+         }
+
+         else if($user_login['username'] != 'admin@admin.com'){
+            $_SESSION['User']="User";
+            $_SESSION['username']=$user_login;
+            $_SESSION['kode_fakultas']=$user_login['kode_fakultas'];
             header("location:dashboard.php");
          }
          else {
@@ -19,18 +35,14 @@ require_once ('conn.php');
       }
    }
    else {
-      echo 'Not Work';
+      echo '';
    }
-// $dbServer = 'localhost';
-// $dbUser = 'root';
-// $dbPass = '';
-// $dbName = "tugas8";
 
-// $conn = mysqli_connect($dbServer, $dbUser, $dbPass);
-// $username = $_POST['username'];
-// $password = $_POST['password'];
- 
-// $query = mysqli_query($conn, "SELECT * FROM users WHERE username='$username' AND password='$password'");
-
-// echo "Sukses";
+   function isAdmin(){
+      if (isset($_SESSION['username']) && $_SESSION['User'] == 'Admin'){
+         return true;
+      }else{
+         return false;
+      }
+   }
 ?>

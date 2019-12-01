@@ -1,0 +1,18 @@
+body {
+  background: blanchedalmond;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+form {
+  border: 5px solid black;
+  border-radius: 5%;
+  background: black;
+  color: white;
+}
+/*# sourceMappingURL=style.css.map */
